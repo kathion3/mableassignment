@@ -26,16 +26,24 @@ Last Updated: November 7, 2024
         the distribution of units administered by PHAs across the U.S.</li>
 <br>
 <br>
+  <br>
 <h3><strong>Empirical CDFs</strong></h3>
+  <br>
 <ul>
     <li>Total Number of Public Housing Units is the number of all units operated by each PHA. Variable in dataset: PHA_TOTAL_UNITS</li>
     <li>Total Number of HCV Units is the number of all housing choice voucher/Section 8 units operated by each PHA. Variable in dataset: SECTION8_UNITS_CNT</li>
     <li> Number of Non-HCV Units is the calculated value of non-HCV units operated by each PHA. Variable in dataset: total_ph_units</li>
 </ul>
+  <br>
 <iframe  allowtransparency="true" style="background: #FFFFFF;" src="final_hcv_ecdf.html" width=800 height="550" frameBorder="0"></iframe>
+  <br>
+  <br>
 <iframe  allowtransparency="true" style="background: #FFFFFF;" src="final_hcv_ecdf.html" width=800 height="550" frameBorder="0"></iframe>
+  <br>
+  <br>
 <iframe  allowtransparency="true" style="background: #FFFFFF;" src="final_ph_ecdf.html" width=800 height="550" frameBorder="0"></iframe>
-    
+<br>
+<br>
 <h3><strong>Medians</strong></h3>
 <ul>
     <li>The median number of <strong>HCV units</strong> across all housing authorities is <strong>77</strong></li>
@@ -47,19 +55,22 @@ Last Updated: November 7, 2024
 <ul>
     <li>Excel sheets, Python/R scripts or code snippets used for analysis, with explanations of how each step was implemented.</li>
 </ul>
-
+<br>
 <h3><strong>Condensed Dataset</strong></h3>
 <ul>
     <li>This condensed dataset, <a href = "https://github.com/kathion3/mableassignment/blob/cdbf79feb3634750242b4ccf427758d5bdfe778b/datasets/condensed_pha_dataset.csv">
                                     available for download as CSV</a>, includes essential information and program size data about all PHAs in the HUD dataset</li>
+  <br>
     <li>SECTION8_UNITS_CNT is the number of HCV units per PHA</li>
     <li>PHA_TOTAL_UNITS is the total number of units per PHA</li>
     <li>total_ph_units was calculated to approximate the number of non-HCV units per PHA </li>
     <ul><li>total_ph_units = PHA_TOTAL_UNITS - SETION8_UNITS_CNT</li></ul>
 </ul>
 <iframe  allowtransparency="true" style="background: #FFFFFF;" src="visualizations/condensed_data_ss.PNG" width=1400 height="500" frameBorder="0"></iframe>
-
+<br>
+<br>
 <h2><strong>Part 2: Market Size Analysis</strong></h2>
+  <br>
 <h3><strong>Calculated Outputs</strong></h3>
     In calculating these outputs, the following example costs were used:
     <ul>
@@ -68,21 +79,25 @@ Last Updated: November 7, 2024
         <li>Flat cost: $3000</li>
     </ul>
     <ul style="list-style-type: none; padding-left: 20px;">
+        <br>
         <li>Costs</li>
         <ul>
             <li>Example costs can be seen in the Example Market Size Analysis Dataset.</li>
             <li>The <strong>median total cost</strong> is <strong>$10,090</strong></li>
         </ul>
+        <br>
         <li>Prices</li>
         <ul>
             <li>Example required prices for a margin of 30% can be seen in the example Market Size Analysis Dataset. </li>
            <li>Given a <strong>margin of 30%</strong>, the <strong>median required price</strong> is <strong>$14,414.29</strong></li>
         </ul>
+        <br>
         <li>SAM</li>
         <ul><li>With the <strong>example costs</strong> and a <strong>margin of 30%</strong>, the SAM</strong> for all PHAs is <strong>$53,026,944</strong>.
 </li></ul>
+        <br>
         <li>Median Price Calculation</li>
-        <ul>The <strong>median required price</strong>based on the median number of HCV units and public housing units is:
+        <ul>The <strong>median required price</strong> based on the median number of HCV units and public housing units is:
             <ul>
                 <li>With 10% margin: $11,211.11</li>
                 <li>With 20% margin: $12,612.5</li>
