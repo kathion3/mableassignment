@@ -14,10 +14,12 @@ Last Updated: November 7, 2024
 <h3><strong>Introduction to Dataset</strong></h3>
     <li>Analyses conducted using <a href="https://hudgis-hud.opendata.arcgis.com/datasets/3d6ef39026b94eb59ddb7ce28eb0b692_0/explore?showTable=true">HUD's Public Housing Authorities dataset</a>
     </li>
-    <li>Analyze programs from >3,819 public housing authorities.</li>
+    <li>Dataset includes information on >3,819 public housing authorities.</li>
     <li>According to HUD, there are approximately 1.2 million households living in public housing units, managed by over 3,300 housing agencies  </li>
     <li>Used variables related to Housing Choice Voucher/Section 8 Housing and Public Housing Units to analyze
         the distribution of units administered by PHAs across the U.S.</li>
+<br>
+<br>
 <h3><strong>Empirical CDFs</strong></h3>
 <iframe  allowtransparency="true" style="background: #FFFFFF;" src="final_ph_ecdf.html" width=800 height="550" frameBorder="0"></iframe>
 <iframe  allowtransparency="true" style="background: #FFFFFF;" src="final_hcv_ecdf.html" width=800 height="550" frameBorder="0"></iframe>
@@ -36,7 +38,32 @@ Last Updated: November 7, 2024
     <li>Excel sheets, Python/R scripts or code snippets used for analysis, with explanations of how each step was implemented.</li>
 </ul>
 
-<h3><strong>Introduction to Dataset</strong></h3>
+<h3><strong>Condensed Dataset</strong></h3>
+<table id="csvTable" border="1">
+    <!-- Table rows will be populated here by JavaScript -->
+</table>
+
+<script>
+// Fetch the CSV file
+fetch('condensed_pha_dataset.csv')
+    .then(response => response.text())
+    .then(data => {
+        const rows = data.split('\\n');
+        const table = document.getElementById('csvTable');
+
+        rows.forEach(row => {
+            const cols = row.split(',');
+            const tr = document.createElement('tr');
+            
+            cols.forEach(col => {
+                const td = document.createElement('td');
+                td.innerText = col;
+                tr.appendChild(td);
+            });
+            table.appendChild(tr);
+        });
+    });
+</script>
 
 <h3><strong>Assignment</strong></h3>
 
