@@ -39,20 +39,36 @@ Last Updated: November 7, 2024
 </ul>
 
 <h3><strong>Condensed Dataset</strong></h3>
+    <li>This condensed dataset, available for download as CSV, includes essential information and program size data about all PHAs
+        in the HUD dataset </li>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSV Condensed Preview</title>
+</head>
+<body>
+
+<h3>CSV Condensed Preview (First 5 Rows and 3 Columns)</h3>
 <table id="csvTable" border="1">
     <!-- Table rows will be populated here by JavaScript -->
 </table>
 
 <script>
-// Fetch the CSV file
-fetch('condensed_pha_dataset.csv')
+// Number of rows and columns to preview
+const previewRows = 5;
+const previewCols = 3;
+
+// Fetch and display the CSV file
+fetch('condensed_phaa_dataset.csv')
     .then(response => response.text())
     .then(data => {
-        const rows = data.split('\\n');
+        const rows = data.split('\n');
         const table = document.getElementById('csvTable');
 
-        rows.forEach(row => {
-            const cols = row.split(',');
+        rows.slice(0, previewRows).forEach(row => {
+            const cols = row.split(',').slice(0, previewCols);  // Limit to first `previewCols` columns
             const tr = document.createElement('tr');
             
             cols.forEach(col => {
@@ -64,6 +80,10 @@ fetch('condensed_pha_dataset.csv')
         });
     });
 </script>
+
+</body>
+</html>
+
 
 <h3><strong>Assignment</strong></h3>
 
